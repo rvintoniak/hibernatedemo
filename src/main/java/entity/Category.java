@@ -13,7 +13,7 @@ public class Category {
     private int id;
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "category")
     private List<Activity> activities = new ArrayList<Activity>();
 
     public int getId() {
@@ -38,5 +38,15 @@ public class Category {
 
     public void setActivities(List<Activity> activities) {
         this.activities = activities;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Category{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", activities=").append(activities);
+        sb.append('}');
+        return sb.toString();
     }
 }

@@ -38,4 +38,14 @@ public class Activity {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Activity{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", id=").append(id);
+        sb.append('}');
+        return sb.toString();
+    }
 }
